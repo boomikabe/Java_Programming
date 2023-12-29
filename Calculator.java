@@ -1,42 +1,23 @@
-Calculator
 
-import java.util.Scanner;
-public class BasicCalculator {
+package javaapplication3;
+
+public class Calculator {
+
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+
+    public double multiply(double a, double b, double c) {
+        return a * b * c;
+    }
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the first number: ");
-        double num1 = scanner.nextDouble();
-        System.out.print("Enter the second number: ");
-        double num2 = scanner.nextDouble();
-        System.out.print("Enter the operator (+, -, *, /): ");
-        char operator = scanner.next().charAt(0);
-        double result = 0;
-        boolean validOperator = true;
-        switch (operator) {
-            case '+':
-                result = num1 + num2;
-                break;
-            case '-':
-                result = num1 - num2;
-                break;
-            case '*':
-                result = num1 * num2;
-                break;
-            case '/':
-                if (num2 != 0) {
-                    result = num1 / num2;
-                } else {
-                    System.out.println("Error: Division by zero is not allowed.");
-                    validOperator = false;
-                }
-                break;
-            default:
-                System.out.println("Error: Invalid operator.");
-                validOperator = false;
-        }
-        if (validOperator) {
-            System.out.println("Result: " + result);
-        }
-        scanner.close();
+        Calculator calculator = new Calculator();
+
+        int result1 = calculator.multiply(2, 3);
+        System.out.println("Result 1: " + result1);
+
+        double result2 = calculator.multiply(2.5, 3.0, 1.5);
+        System.out.println("Result 2: " + result2);
     }
 }
